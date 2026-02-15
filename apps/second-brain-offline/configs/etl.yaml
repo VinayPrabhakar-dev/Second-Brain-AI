@@ -1,0 +1,7 @@
+parameters:
+  data_dir: data/
+  load_collection_name: raw
+  to_s3: false
+  max_workers: 4
+  quality_agent_model_id: gemini-2.5-flash
+  quality_agent_mock: false

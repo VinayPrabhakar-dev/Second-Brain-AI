@@ -56,11 +56,11 @@ class Settings(BaseSettings):
     )
 
     # --- OpenAI API Configuration ---
-    OPENAI_API_KEY: str = Field(
+    GEMINI_API_KEY: str = Field(
         description="API key for OpenAI service authentication.",
     )
 
-    @field_validator("OPENAI_API_KEY")
+    @field_validator("GEMINI_API_KEY")
     @classmethod
     def check_not_empty(cls, value: str, info) -> str:
         if not value or value.strip() == "":

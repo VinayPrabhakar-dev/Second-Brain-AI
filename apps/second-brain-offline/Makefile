@@ -35,7 +35,7 @@ else
 endif
 
 local-zenml-server-stop:
-	uv run zenml logout --local --docker
+	uv run zenml logout --local
 
 local-infrastructure-up: local-docker-infrastructure-up local-zenml-server-stop local-zenml-server-up
 

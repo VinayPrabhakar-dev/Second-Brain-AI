@@ -51,7 +51,7 @@ class MongoDBService(Generic[T]):
             logger.error(f"Error clearing the collection: {e}")
             raise
 
-    def ingest_docuements(self, documents: list[T]) -> None:
+    def ingest_documents(self, documents: list[T]) -> None:
         try:
             if not documents or not all(
                 isinstance(doc, BaseModel) for doc in documents

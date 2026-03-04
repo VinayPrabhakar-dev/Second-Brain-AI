@@ -1,7 +1,12 @@
 from pathlib import Path
 
 from loguru import logger
+# from zenml.config import DockerSettings
 from zenml import pipeline
+
+# docker_settings = DockerSettings(
+#     dockerfile = "Dockerfile.zenml",
+# )
 
 from steps.etl import add_quality_score, crawl
 from steps.infrastructure import (
@@ -23,7 +28,7 @@ def etl(
     notion_data_dir = data_dir / "notion"
     logger.info(f"Reading notion data from {notion_data_dir}")
     crawled_data_dir = data_dir / "crawled"
-    logger.infor(f"Saving crawled data to {crawled_data_dir}")
+    logger.info(f"Saving crawled data to {crawled_data_dir}")
 
     documents = read_documents_from_disk(
         data_directory = notion_data_dir, nesting_level = 1
